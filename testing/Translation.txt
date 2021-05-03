@@ -1,0 +1,11 @@
+Original text: 
+much text is in this file
+
+on multiple
+
+lines,
+Translated text: Translated(src=en, dest=zh-cn, text=该文件中有很多文本
+
+在多个
+
+线，, pronunciation=[[]], extra_data="{'translat...")
