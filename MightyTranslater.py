@@ -6,7 +6,7 @@ from allLang import languages # Important python dictionary file of available la
 import PyPDF2 # Imports python library for working with PDF files
 from PyPDF2 import PdfFileReader
 import docx2txt 
-from config import *
+from config import * # Resposible for the naming of the file which text is saved too
 # Go to bottom of the code for library references to installment 
 
 key_list = list(languages.keys()) # A variable of keys in the languages dictionary as a list
@@ -125,10 +125,7 @@ while a == 1:
         soup = BeautifulSoup(html, "html.parser") # Using BeautifulSoup to scan the page
         
         doc = soup.get_text() # Scrapes the HTML to leave just text and removes tags
-        str(doc)
-        trsl = transl(doc, keyIn, keyOut)
-        trsl.actTransl()
-#        word = translator.translate(doc, src=keyIn, dest=keyOut) # Translates the scraped HTML via BeautifulSoup by using the GoogleTrans library
+        word = translator.translate(doc, src=keyIn, dest=keyOut) # Translates the scraped HTML via BeautifulSoup by using the GoogleTrans library
                                                                  # src = Source language. Provided by Line 10-14
                                                                  # dest = Destination language. Provided by Line 16-19
 
@@ -137,10 +134,8 @@ while a == 1:
         # Converts user's input into uppercase
 
         if current == "Y": # If statement to check if user's input is viable
-            trsl = transl(doc, keyIn, keyOut)
-            trsl.actTransl()
-            #print(soup.get_text()) # If viable as "Y", it will output the document in current language
-            #print(word) # Will then continue to output in translated language
+            print(soup.get_text()) # If viable as "Y", it will output the document in current language
+            print(word) # Will then continue to output in translated language
             again = str.upper(input("Do you want to translate something else? Y/N: "))
             if again == "Y":
                 a = 1
